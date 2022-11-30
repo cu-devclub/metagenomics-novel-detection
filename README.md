@@ -17,9 +17,9 @@ A function for calculating distances between unknown species and known species (
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `not_novel` | `array` | The features (k-mer frequency profiles) for known species. |
-| `not_novel_species` | `array` | The lebels (species labels) for known species. |
+| `not_novel_species` | `array` | The lebels (species labels) for each row of known species. |
 | `novel` | `array` | The features (k-mer frequency profiles) for unknown species. |
-| `novel_species` | `array` | The lebels (species labels) for unknown species. |
+| `novel_species` | `array` | The lebels (species labels) for each row of unknown species. |
 | `distance` | `String` | The distance metric used to calculate distances between species. |
 
 #### How to use this function
