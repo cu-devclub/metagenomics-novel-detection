@@ -25,7 +25,11 @@ A function for calculating distances between unknown species and known species (
 #### How to use this function
 Takes two dataset of species (features and labels of both known and unknown) and returns the DataFrame containing pair-wise distances between unknown and known species.
 ```python
-d = Distances(not_novel, not_novel_species, novel, novel_species, distance)
+d = Distances(not_novel,
+              not_novel_species,
+              novel,
+              novel_species,
+              distance)
 d.get_distances_between_species()
 ```
 
@@ -45,6 +49,6 @@ An example of output from this function.
 | 1085644 |	485898  |	0.849495 |
 
 According to this output:
-  - The species '1270' (known) has the furthest dtistance away from species '1085644' (unknown).
-  - The species '33028' (known) has the closest distance to species '1805644' (unknown).
+  - The species "1270" (known) has the furthest dtistance away from species "1085644" (unknown).
+  - The species "33028" (known) has the closest distance to species "1805644" (unknown).
 
