@@ -5,7 +5,7 @@ This package we provide you functions for analysing k-mer frequency profiles wit
   
 ## API Reference
 
-#### Distances between species
+### Distances between species
 
 ```python
 get_distances_between_species()
@@ -22,14 +22,14 @@ A function for calculating distances between unknown species and known species (
 | `novel_species` | `array` | The lebels (species labels) for unknown species. |
 | `distance` | `String` | The distance metric used to calculate distances between species. |
 
+#### How to use this function
+Takes two dataset of species (features and labels of both known and unknown) and returns the DataFrame containing pair-wise distances between unknown and known species.
 ```python
 d = Distances(not_novel, not_novel_species, novel, novel_species, distance)
 d.get_distances_between_species()
 ```
 
-Takes two dataset of species (known and unknown) and returns the DataFrame containing pair-wise distances between unknown and known species.
-
-#### Sample of output
+An example of output from this function.
 | Novel Species | Not Novel Species  | Mean of Distances  |
 | :------------ | :----------------- | :----------------- |
 | 1085644 |	1270    |	0.941044 |
