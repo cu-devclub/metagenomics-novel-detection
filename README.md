@@ -22,15 +22,15 @@ A function for calculating distances between unknown species and known species (
 | `novel_species` | `array` | The lebels (species labels) for each row of unknown species. |
 | `distance` | `String` | The distance metric used to calculate distances between species. |
 
-#### How to use this function
+#### • How to use this function
 Takes two dataset of species (features and labels of both known and unknown) and returns the DataFrame containing pair-wise distances between unknown and known species.
 ```python
-d = Distances(not_novel,
-              not_novel_species,
-              novel,
-              novel_species,
-              distance)
-d.get_distances_between_species()
+d = Distances()
+d.get_distances_between_species(not_novel,
+                                not_novel_species,
+                                novel,
+                                novel_species,
+                                distance)
 ```
 
 An example of output from this function.
@@ -52,3 +52,34 @@ According to this output:
   - The species "1270" (known) has the furthest dtistance away from species "1085644" (unknown).
   - The species "33028" (known) has the closest distance to species "1805644" (unknown).
 
+### Silhouette score
+Silhouette score is . . .
+
+```python
+get_silhouette_score()
+```
+A function for calculating silhouette scores of projected clusters from UMAP. 
+  - Input is projected coordinates and its labels.
+  - Output is a silhouette score of UMAP's projected clusters.  
+  
+This function will first feed UMAP's projected coordinates to HDBSCAN to extract clusters labels, then use those labels instead of species labels for calculating silhouette scores.
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `train_embed` | `array` | The projected coordinates of known species form UMAP. |
+| `test_embed` | `array` | The projected coordinates of unknown species from UMAP. |
+| `n_samples` | `float` | Number of faetures per species. |
+| `distance` | `String` | The distance metric for HDBSCAN. |
+
+#### • How to use this function
+Takes two dataset of projected coordinates derived from UMAP (known and unknown species) and returns the silhouette score of projected clusters.
+```python
+s = Scores()
+s.get_silhouette_score(train_embed,
+                       test_embed,
+                       n_samples,
+                       distance)
+```  
+
+An example of output from this function.  
+0.8614895
